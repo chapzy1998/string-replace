@@ -9,6 +9,7 @@ if [[ $1 && $2 && $3 ]];then
 	grep -r $2 $file
 	if [ $? == 0 ];then
 	  count=$((count+1))
+	  echo -e "FILE: $file"
 	  sed -i "s/$2/$3/g" $file
 	fi
       done
